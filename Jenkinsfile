@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Verify Branch') {
             steps {
-                pwsh 'Hello World'
+                echo 'Hello World'
             }
         }
     }
