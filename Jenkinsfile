@@ -9,8 +9,8 @@ pipeline {
       }
       stage('Docker Build') {
          steps {
-            pwsh(script: 'docker images -a')
-            pwsh(script: """
+            powershell(script: 'docker images -a')
+            powershell(script: """
                cd azure-vote/
                docker images -a
                docker build -t jenkins-pipeline .
@@ -21,7 +21,7 @@ pipeline {
       }
       stage('Start test app') {
          steps {
-            pwsh(script: """
+            powershell(script: """
                docker-compose up -d
                ./scripts/test_container.ps1
             """)
